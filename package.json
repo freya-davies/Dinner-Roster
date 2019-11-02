@@ -1,0 +1,29 @@
+{
+  "name": "dinner-roster",
+  "version": "1.0.0",
+  "description": "Week 3 personal project, Dinner Roster",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "debug": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/freya-davies/Dinner-Roster.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/freya-davies/Dinner-Roster/issues"
+  },
+  "homepage": "https://github.com/freya-davies/Dinner-Roster#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^3.1.0",
+    "handlebars": "^4.5.1",
+    "knex": "^0.20.1",
+    "nodemon": "^1.19.4",
+    "pg": "^7.12.1",
+    "sqlite3": "^4.1.0"
+  }
+}
