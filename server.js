@@ -23,7 +23,7 @@ server.get('/', (req, res) => {
 })
 
 server.get('/profile', (req, res) => {
-    res.send('Hello profiel page')
+    res.send('Hello profile page')
 })
 
 server.get('/profile/:id', (req, res) => {
