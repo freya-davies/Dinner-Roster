@@ -1,0 +1,20 @@
+{{>nav}}
+
+<h1>Dietary Requirements</h1>
+
+{{#if }} 
+<ul>
+{{#each dietaryRequirement}}
+<img src="turtle.jpeg" alt="A turtle about to eat a strawberry">
+<h3>The people have spoken! Your challenge is to make a meal but not just any 
+    meal, one which is amazeballs for people who have the following requirements:</h3>
+<li>{{dietaryRequirement}}</li>
+{{/each}}
+{{else}}
+<img src="/squirrel.jpeg" alt="A squirrel stuffing nuts into its mouth">
+<p>
+    No one has entered any dietary requirements, whahoo! 
+    Make whatever you desire!
+</p>
+{{/if}}
+</ul>
