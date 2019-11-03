@@ -1,0 +1,15 @@
+{{>nav}}
+
+<h1>All the people!!</h1>
+<h2>Here are all the wonderful people you may or may not live with</h2>
+
+<div>
+    {{#if profile}}
+    {{profile}}
+    {{else}}
+    <p>
+        *silence*... <br> 
+        There doesn't seem to be anyone here. Perhaps you live alone? In that case, I am sorry to say that this is not the app for you.
+    </p>
+    {{/if}}
+</div>
