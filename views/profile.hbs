@@ -1,6 +1,9 @@
 {{>nav}}
 
-{{#each}}
+{{#if xxxxxx}}
+{{#each xxxxxx}}
+<h1>Oh look it's {{name}}s profile page!!</h1>
+
 <img src="/images/{{img}}" alt="Image of {{name}}">
 <p>
     {{name}}
@@ -18,3 +21,11 @@
     </p>
     {{/if}}
 </ul>
+
+{{/each}}
+{{else}}
+<h1>Wha-woh, this profile doesn't exist!!</h1>
+<p>
+    To create one click <a href="/addUser">here</a>
+</p>
+{{/if}}
