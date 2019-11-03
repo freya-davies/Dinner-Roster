@@ -36,16 +36,18 @@ server.get('/calendar', (req, res) => {
     res.render('calendar')
 })
 
-server.get('/dietaryRequirements', (req, res) => {
-    res.render('dietaryRequirements')
-})
-
 server.get('/addUser', (req, res) => {
     res.render('addUser')
 })
 
+server.get('/dietaryRequirements', (req, res) => {
+    res.render('dietaryRequirements')
+    //redirect to /profile.:id
+})
+
 server.get('/addDayAway', (req, res) => {
     res.render('addDayAway')
+    //redirect to /profile.:id
 })
 
 
