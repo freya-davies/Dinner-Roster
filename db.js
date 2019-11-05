@@ -8,3 +8,4 @@ const connection = require('knex')(config)
 module.exports = {
     
 }
+

@@ -7,6 +7,9 @@ const db = require('./db')
 const server = express()
 
 // Middleware
+server.engine('hbs', hbs ({
+    extname: 'hbs'
+}))
 
 server.set('view engine', 'hbs') // allow access to hbs file directory
 server.use(express.static('public')) // allow access to public folder
