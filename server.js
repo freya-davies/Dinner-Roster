@@ -8,7 +8,8 @@ const server = express()
 
 // Middleware
 server.engine('hbs', hbs ({
-    extname: 'hbs'
+    extname: 'hbs', 
+    defaultLayout: 'main'
 }))
 
 server.set('view engine', 'hbs') // allow access to hbs file directory
