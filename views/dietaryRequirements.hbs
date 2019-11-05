@@ -1,18 +1,25 @@
 <h1>Dietary Requirements</h1>
 
-{{#if }} 
+<div>
+    {{#if dietaryRequirement}} 
 <ul>
 {{#each dietaryRequirement}}
-<img src="turtle.jpeg" alt="A turtle about to eat a strawberry">
+<img src="/images/turtle.jpeg" alt="A turtle about to eat a strawberry">
 <h3>The people have spoken! Your challenge is to make a meal but not just any 
     meal, one which is amazeballs for people who have the following requirements:</h3>
 <li>{{dietaryRequirement}}</li>
 {{/each}}
 {{else}}
-<img src="/squirrel.jpeg" alt="A squirrel stuffing nuts into its mouth">
+<img src="/images/squirrel.jpg" alt="A squirrel stuffing nuts into its mouth">
 <p>
     No one has entered any dietary requirements, whahoo! 
-    Make whatever you desire!
+    Make whatever your stomach desires!
 </p>
 {{/if}}
 </ul>
+</div>
+
+<div>
+    <h2>Remembered you are highly allergic to nuts? Quick, add it to your profile!</h2>
+    
+</div>

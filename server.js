@@ -46,12 +46,11 @@ server.get('/addUser', (req, res) => {
 
 server.get('/dietaryRequirements', (req, res) => {
     res.render('dietaryRequirements')
-    //redirect to /profile.:id
 })
 
 server.get('/addDayAway', (req, res) => {
     res.render('addDayAway')
-    //redirect to /profile.:id
+    //redirect to /calendar
 })
 
 
