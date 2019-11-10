@@ -35,28 +35,28 @@ router.get('/:id', (req, res) => {
 //       })
 
 
-// router.get('/', (req, res) => {
-//     res.render('index')
-// })
+router.get('/', (req, res) => {
+    res.render('index')
+})
 
-// router.get('/profile/:id', (req, res) => {
-//     // let {id} = req.params
+router.get('/profile/:id', (req, res) => {
+    // let {id} = req.params
 
-//     res.render('profile')
-// })
+    res.render('profile')
+})
 
-// router.get('/calendar', (req, res) => {
-//     res.render('calendar')
-// })
+router.get('/calendar', (req, res) => {
+    res.render('calendar')
+})
 
-// router.get('/dietaryRequirements', (req, res) => {
-//     res.render('dietaryRequirements')
-// })
+router.get('/dietaryRequirements', (req, res) => {
+    res.render('dietaryRequirements')
+})
 
-// router.get('/addUser', (req, res) => {
-//     res.render('addUser')
-// })
+router.get('/addUser', (req, res) => {
+    res.render('addUser')
+})
 
-// router.get('/addDayAway', (req, res) => {
-//     res.render('addDayAway')
-// })
+router.get('/addDayAway', (req, res) => {
+    res.render('addDayAway')
+})
