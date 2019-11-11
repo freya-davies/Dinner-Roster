@@ -1,7 +1,8 @@
 
 exports.up = function(knex) {
   return knex.schema.createTable('dietaryRequirements', table => {
-    table.string('requirements')
+    table.string('requirement_id')
+    table.string('requirement')
 
   })
 };

@@ -2,6 +2,8 @@ const express = require('express')
 const hbs = require('express-handlebars')
 const userRoutes = require('./routes/users')
 const db = require('./db')
+const config = require('./knexfile')[environment]
+const connection = require('knex')(config)
 
 
 const server = express()
