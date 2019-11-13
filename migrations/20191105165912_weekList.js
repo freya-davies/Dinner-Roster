@@ -1,7 +1,7 @@
 
 exports.up = function(knex) {
   return knex.schema.createTable('weekList', table => {
-    //this needs calendar days in it
+    table.string('calendar_id').primary()
   })
 };
 
