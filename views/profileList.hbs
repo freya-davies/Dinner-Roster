@@ -2,8 +2,13 @@
 <h2>Here are all the wonderful people you may or may not live with</h2>
 
 <div>
-    {{#if profile}}
-    {{profile}}
+    {{#if profiles}}
+    {{#each profiles}}
+        <div onClick="something goes in here.">
+             <img src="/images/{{profiles.user_image}}" alt="{{profiles.name}}'s image'">
+             <h2>{{profiles.name}}</h2>
+        </div>
+    {{/each}}
     {{else}}
     <p>
         *silence*... <br> 
