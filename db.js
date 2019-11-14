@@ -1,8 +1,8 @@
 const knex = require('knex')
 const env = process.env.NODE_ENV || 'development'
 const config = require('./knexfile')[env]
-const connection = require('knex')(config)
-const db = knex(config[env])
+// const connection = require('knex')(config)
+const db = knex(config)
 
 
 db('profiles').select().then(data => {

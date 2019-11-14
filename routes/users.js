@@ -12,28 +12,6 @@ router.get('/:id', (req, res) => {
       })
   })
   
-//   router.get('/profile', (req, res) => {
-//   })
-
-//from birds project
-// router.post('/:id/user', (req, res) => {
-//     let voterName = req.body.name
-//     let quote = req.body.quote
-//     let birdVote = req.body.birdVote
-//     let newVoter = {
-//       voter_bird_id: birdVote,
-//       voter_name: voterName,
-//       quote: quote
-//     }
-
-//     db.newVoter(newVoter)
-//       .then(() => db.getVotes())
-//       .then( allVotes => 
-//         db.addUpVotes(newVoter.voter_bird_id, allVotes))
-//       .then(() => {
-//         res.redirect('/voterProfile')
-//       })
-
 
 router.get('/', (req, res) => {
     res.render('index')

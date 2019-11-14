@@ -5,7 +5,7 @@ exports.seed = function(knex) {
     .then(function () {
       // Inserts seed entries
       return knex('weekList').insert([
-        {id: 1, colName: 'rowValue1'}
+        {calendar_id: 1}
       ]);
     });
 };
