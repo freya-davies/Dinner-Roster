@@ -3,17 +3,20 @@ const db = require('../db')
 // const router = express()
 const router = express.Router()
 
+// Calendar stuff - https://github.com/nhn/tui.calendar/blob/master/docs/getting-started.md
+// var Calendar = require('tui-calendar');
+// require("tui-calendar/dist/tui-calendar.css");
 
 
-// router.get('/:id', (req, res) => {
-
-//     let {id} = req.params
-  
-//     db.getUser(id)
-//     .then(data => {
-//         res.render('profile', data[0])
-//       })
-//   })
+// var calendar = new Calendar('#calendar', {
+//     defaultView: 'month',
+//     taskView: true,
+//     template: {
+//       monthDayname: function(dayname) {
+//         return '<span class="calendar-week-dayname-name">' + dayname.label + '</span>';
+//       }
+//     }
+//   });
   
 router.get('/', (req, res) => {
     res.render('index')
@@ -23,9 +26,9 @@ router.get('/', (req, res) => {
 router.get('/profile', (req, res) => {
     getFullProfile()
     .then(data => {
-        res.render('profileList', data)
+        res.send("hello?")
+        // res.render('profileList', data)
     })
-    // res.send("hello?")
 })
 
 
