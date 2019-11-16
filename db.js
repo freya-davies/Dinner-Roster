@@ -23,15 +23,15 @@ function joinProfileAndDR (id, db = database) {
 function getDBAndProfile (id, db = database) {
     return db ('profiles')
     .join('dietaryRequirements', 'profiles.user_id', 'dietaryRequirements.person_id')
-    .select('*')
+    // .select('*')
 }
 
 
-function getFullProfile (db = database) {
+function getAllProfiles (db = database) {
     return db('profiles')
-    .where('id', id)
-    .first()
+    .select()
 }
+
 
 function addNewProfile(personInfo, db = database){
     return db('profiles')
@@ -44,6 +44,7 @@ function getProfile(id, db = database) {
     .where('user_id', id)
     .select()
 }
+
 
 function getProfileIdWithName(name, db = database) {
     return db('profile')
@@ -71,8 +72,8 @@ function getWeekList(id, db = database) {
 
 module.exports = {
     joinProfileAndDR,
-    getFullProfile,
     getDBAndProfile,
+    getAllProfiles,
     getProfile,
     addNewProfile,
     getRequirement,

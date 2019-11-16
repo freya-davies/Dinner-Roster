@@ -1,7 +1,8 @@
 const express = require('express')
 const db = require('../db')
-// const router = express()
 const router = express.Router()
+// const router = express()
+// const profilesDb = require('../db/profiles')
 
 // Calendar stuff - https://github.com/nhn/tui.calendar/blob/master/docs/getting-started.md
 // var Calendar = require('tui-calendar');
@@ -24,19 +25,20 @@ router.get('/', (req, res) => {
 
 
 router.get('/profile', (req, res) => {
-    res.render('profile')
+    // res.render('profile')
     // res.send("hello?")
-    // getFullProfile()
-    // .then(data => {
-    //     res.render('profileList', data)
-    // })
+    db.getAllProfiles()
+    .then(data => {
+        console.log(data)
+        res.render('profileList', data)
+    })
 })
 
 
 router.get('/profile/:id', (req, res) => {
     let id = req.params.id
 
-    joinProfileAndDR(id)
+    db.joinProfileAndDR(id)
     .then(getProfile(id))
     .then(data => {
         res.render('profile', data)
@@ -70,7 +72,7 @@ router.post('/addUser', (req, res) => {
         // let id = newProfile.user_id
         // res.render('profile/' + id)
     // )
-    getProfileIdWithName(userName)
+    db.getProfileIdWithName(userName)
     .then((id) => {
         res.redirect('/profile/:id')
     })
