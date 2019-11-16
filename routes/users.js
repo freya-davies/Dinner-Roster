@@ -28,9 +28,11 @@ router.get('/profile', (req, res) => {
     // res.render('profile')
     // res.send("hello?")
     db.getAllProfiles()
-    .then(data => {
-        console.log(data)
-        res.render('profileList', data)
+    .then(allProfilesData => {
+        console.log(allProfilesData)
+        res.render('profileList', {
+            allProfilesData: allProfilesData
+        })
     })
 })
 
