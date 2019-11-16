@@ -1,8 +1,10 @@
 /* colours:
-brown of background - rgb(199, 154, 96)
-brown mid of nav - rgb(226, 199, 164)
 light brown of nave hover - rgb(255, 225, 187)
+brown mid of nav - rgb(226, 199, 164)
+brown of background - rgb(199, 154, 96)
 dark grey of nav font - rgb(56, 56, 56)
+
+Fonts:
 main font - font-family: 'Noto Sans', sans-serif;
 secondary font (in caps) - font-family: 'Roboto', sans-serif
 */
@@ -44,8 +46,13 @@ form, #navbar {
   color: dimgrey;
 }
 
+a:link {
+  text-decoration: none;
+}
+
 a:visited {
   color: inherit;
+  text-decoration: none;
 }
 
 
@@ -72,6 +79,11 @@ h2 {
 
 .spacer {
   padding-top: 2%;
+}
+
+.hoverBackground:hover {
+  background-color: rgb(56, 56, 56);
+  color: rgb(255, 225, 187);
 }
 
 

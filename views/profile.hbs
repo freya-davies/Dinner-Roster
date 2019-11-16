@@ -1,15 +1,20 @@
 
-<div class="profileImgBlock" >
+{{!-- <div class="profileImgBlock" >
     {{>stars}}
 <img class="profileImg" src="/images/freya.jpg" alt="img">
-</div>
-{{!-- 
+</div> --}}
+
 
 {{#if profiles}}
 {{#each profiles}}
 <h1>Oh look it's {{name}}s profile page!!</h1>
 
-<img src="/images/{{img}}" alt="Image of {{name}}">
+
+<div class="profileImgBlock" >
+    {{>stars}}
+<img class="profileImg" src="/images/{{img}}" alt="Image of {{name}}">
+</div>
+
 <p>
     {{name}}
 </p>
@@ -32,17 +37,8 @@
 {{/each}}
 {{else}}
 <h1>Wha-woh, this profile doesn't exist!!</h1>
-
-
-<div class="profileImgBlock" >
-    <img class="profileImg" src="/public/images/freya.JPG" alt="">
-    {{stars}}
-</div>
-
-
-
-<p>
+<p class="centerText hoverBackground" >
     To create one click <a href="/addUser">here</a>
 </p>
 {{/if}}
- --}}
+
