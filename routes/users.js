@@ -29,7 +29,7 @@ router.get('/profile', (req, res) => {
     // res.send("hello?")
     db.getAllProfiles()
     .then(allProfilesData => {
-        console.log(allProfilesData)
+        // console.log(allProfilesData)
         res.render('profileList', {
             allProfilesData: allProfilesData
         })
@@ -41,7 +41,7 @@ router.get('/profile/:id', (req, res) => {
     let id = req.params.id
 
     db.joinProfileAndDR(id)
-    .then(getProfile(id))
+    .then(db.getProfile(id))
     .then(data => {
         res.render('profile', data)
     })
