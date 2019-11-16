@@ -33,24 +33,16 @@ function getFullProfile (db = database) {
     .first()
 }
 
-
-function getProfile(id, db = database) {
-    return db('Posts')
-    .where('id', id)
-    .first()
+function addNewProfile(personInfo, db = database){
+    return db('profiles')
+    .insert(personInfo)
 }
 
 
-function getUser(id, db = database) {
+function getProfile(id, db = database) {
     return db('profile')
     .where('user_id', id)
     .select()
-}
-
-
-function createUser(userData, db = database){
-    return db('profile')
-    .insert(userData)
 }
 
 
@@ -75,9 +67,8 @@ module.exports = {
     joinProfileAndDR,
     getFullProfile,
     getDBAndProfile,
-    getUser,
-    createUser,
     getProfile,
+    addNewProfile,
     getRequirement,
     getWeekList,
 }

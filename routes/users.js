@@ -52,34 +52,20 @@ router.get('/addUser', (req, res) => {
 
 
 router.post('/addUser', (req, res) => {
-    const user = {
-        name: req.body.name,
-        user_image: req.body.user_image
-      }
-      
-      db.createUser(user)
-      .then(id => db.getUser(id))
-      .then(user => {
-        res.render(user)
-    })
-})
-
-
-router.post('/addUser', (req, res) => {
     let userName = req.body.name
     let userImg = req.body.Img
-    let userRequirement = req.body.userRequirement
+    // let userRequirement = req.body.userRequirement
     let newProfile = {
-        userName : userName, 
-        userImg: userImg,
-        userRequirement, userRequirement,
+        name : userName, 
+        user_imgage: userImg,
+        // userRequirement, userRequirement,
     }
 
-    db.newUser(newProfile)
-    .then(() => {
-        let id = newProfile.user_id
-        res.render('profile/' + id)
-    })
+    db.addNewProfile(newProfile)
+    .then( x => res.send(x)
+        // let id = newProfile.user_id
+        // res.render('profile/' + id)
+    )
 })
 
 
