@@ -11,7 +11,7 @@ const database = knex(config)
 function joinProfileAndDR (id, db = database) {
     return db ('dietaryRequirements')
     .join('profiles', 'dietaryRequirements.person_id', 'profiles.user_id')
-    .select('*')
+    // .select('*')
     // .then(x => {
     //     console.log(x) 
     //    //call the function below with x as argument
@@ -40,14 +40,14 @@ function addNewProfile(personInfo, db = database){
 
 
 function getProfile(id, db = database) {
-    return db('profile')
+    return db('profiles')
     .where('user_id', id)
     .select()
 }
 
 
 function getProfileIdWithName(name, db = database) {
-    return db('profile')
+    return db('profiles')
     .where('name', name)
     .select('user_id')
 }
@@ -61,7 +61,7 @@ function getRequirement(id, db = database) {
 
 
 function getWeekList(id, db = database) {
-    return db('profile')
+    return db('profiles')
     .where('calendar_id', id)
     .select()
 }
