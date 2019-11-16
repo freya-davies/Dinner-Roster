@@ -24,7 +24,7 @@ html, body {
 }
 
 #navbar li {
-  display:inline-block;
+  display: inline-block;
   /* margin: 0 auto; */
   padding-left: 20px;
   padding-right: 20px;
@@ -89,7 +89,7 @@ h2 {
   min-width: ;
 } */
 
-.bunnyImg, .dRImg {
+.bunnyImg, .dRImg, .profileImg, .starImgs {
   border-radius: 25px;
 }
 
@@ -104,6 +104,69 @@ h2 {
   margin-left: 35%;
   margin-right: 35%;
 }
+
+.profileImgBlock {
+  width: 30%;
+  height: 50%;
+  /* text-align: center; */
+  /* display: block; */
+}
+
+.profileImg {
+  z-index: 2;
+  height: 80%;
+  border-radius: 100%;
+  margin-left: 12%;
+  margin-top: 12%;
+  position: relative;
+}
+
+.starImgs {
+  z-index: 1;
+  position: absolute;
+  /* display: none; */
+  /* visibility: hidden;  */
+}
+
+.profileImg:hover  + .starImgs{
+  display: block;
+  /* visibility: visible;  */
+}
+
+.starLeftTop, .starRightTop, .starLeftBottom, .starRightBottom {
+  height: 200px;
+  width: 200px;
+  z-index: 1;
+  padding: 0px;
+  margin: 0px;
+  /* display: block; */
+  float: left;
+}
+
+.starLeftTop {
+  border-radius: 25% 0px 0px 0px;
+}
+
+.starRightTop {
+  border-radius: 0px 25% 0px 0px;
+}
+.starRightBottom {
+  border-radius: 0px 0px 25% 0px;
+}
+.starLeftBottom {
+  border-radius: 0px 0px 0px 25%;
+}
+
+/* .starLeftTop, .starRightTop {
+  display: block;
+  float:left;
+}
+
+.starLeftBottom, .starRightBottom {
+  float:left;
+  margin-top: 200px;
+  margin-left: 0px;
+} */
 
 
 

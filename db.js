@@ -45,6 +45,12 @@ function getProfile(id, db = database) {
     .select()
 }
 
+function getProfileIdWithName(name, db = database) {
+    return db('profile')
+    .where('name', name)
+    .select('user_id')
+}
+
 
 function getRequirement(id, db = database) {
     return db('dietaryRequirements')

@@ -24,11 +24,12 @@ router.get('/', (req, res) => {
 
 
 router.get('/profile', (req, res) => {
-    getFullProfile()
-    .then(data => {
-        res.send("hello?")
-        // res.render('profileList', data)
-    })
+    res.render('profile')
+    // res.send("hello?")
+    // getFullProfile()
+    // .then(data => {
+    //     res.render('profileList', data)
+    // })
 })
 
 
@@ -65,10 +66,14 @@ router.post('/addUser', (req, res) => {
     }
 
     db.addNewProfile(newProfile)
-    .then( x => res.send(x)
+    // .then( x => res.send(x)
         // let id = newProfile.user_id
         // res.render('profile/' + id)
-    )
+    // )
+    getProfileIdWithName(userName)
+    .then((id) => {
+        res.redirect('/profile/:id')
+    })
 })
 
 
