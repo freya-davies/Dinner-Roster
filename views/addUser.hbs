@@ -1,24 +1,24 @@
 <h1>A new face, welcome!</h1>
 <h2>Here you can sign up and get cooking for your beloved house-mates. Oh how wonderful!</h2>
 
-<form action="/" method="POST">
+<form class="addUserForm" action="/" method="POST">
   <section>
       Name: 
-    <input type="text" name="name">
+    <input class="textBox" type="text" name="name">
   </section>
   
-  <section>
+  <section class="spacer" >
     Photo: 
-    <input class="formImg" type="file" name="imgToUpload">
+    <input class="button" type="file" name="imgToUpload">
   </section>
   
-  <section>
+  <section class="spacer">
       Dietary Requirements: 
-    <input type="text" name="dietaryR">
+    <input class="textBox" type="text" name="dietaryR">
   </section>
   
   <section class="buttonWrap">
-    <a href="/calendar"><input type="submit" class="button" name="newUser" value="">Done! Now show me the calendar!</a>
+    <a href="/calendar"><input type="submit" class="button bottomAtButton" name="newUser" value="Done! Now show me the calendar!"></a>
   </section>
 </form>
 

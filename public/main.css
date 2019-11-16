@@ -1,18 +1,31 @@
+/* colours:
+brown of background - rgb(199, 154, 96)
+brown mid of nav - rgb(226, 199, 164)
+light brown of nave hover - rgb(255, 225, 187)
+dark grey of nav font - rgb(56, 56, 56)
+main font - font-family: 'Noto Sans', sans-serif;
+secondary font (in caps) - font-family: 'Roboto', sans-serif
+*/
+
+
 html, body {
   height: 100%;
+  /* font-family: 'Roboto', sans-serif */
+  font-family: 'Noto Sans', sans-serif;
 }
 
-#navbar {
-  margin: 0px;
-  padding: 0px;
+#nav {
+  /* padding: 0px;
   display:inline-block;
-  /* list-style-type: none; */
   margin: 0 auto;
+  padding-left: 20%;
+  margin-left: 20%;
+  margin-inline-start: 10%; */
 }
 
 #navbar li {
   display:inline-block;
-  margin: 0 auto;
+  /* margin: 0 auto; */
   padding-left: 20px;
   padding-right: 20px;
 }
@@ -26,23 +39,22 @@ html, body {
   border-radius: 12px;
 }
 
-a:visited {
-  color: inherit;
-}
-
 form, #navbar {
   background-color: rgb(226, 199, 164);
   color: dimgrey;
 }
 
-.formImg {
-  border-radius: 25px;
+a:visited {
+  color: inherit;
 }
+
+
+
 
 body {
   background-color: rgb(199, 154, 96);
   color: rgb(56, 56, 56);
-  font-family: 'McLaren', cursive;
+  /* font-family: 'McLaren', cursive; */
 }
 
 h1 {
@@ -54,12 +66,31 @@ h2 {
   text-align: center;
 }
 
-.homeImg {
+.centerText {
+  text-align: center;
+}
+
+.spacer {
+  padding-top: 2%;
+}
+
+
+
+
+/* .formImg {
+  border-radius: 25px;
+} */
+
+/* .homeImg {
   width: 80%;
   margin: 0 auto;
   border-radius: 25px;
   /* max-width: ;
-  min-width: ; */
+  min-width: ;
+} */
+
+.bunnyImg, .dRImg {
+  border-radius: 25px;
 }
 
 .bunnyImg {
@@ -74,19 +105,18 @@ h2 {
   margin-right: 35%;
 }
 
-.centerText {
-  text-align: center;
-}
+
+
 
 .buttonWrap {
   height: 100%;
   display: flex;
   align-items: center;
-  justify-content: center;
+  /* justify-content: center; */
 }
 
 .button {
-  width: 140px;
+  /* width: 340px; */
   height: 45px;
   font-family: 'Roboto', sans-serif;
   font-size: 11px;
@@ -101,11 +131,26 @@ h2 {
   transition: all 0.3s ease 0s;
   cursor: pointer;
   outline: none;
-  }
+}
 
 .button:hover {
   background-color: rgb(114, 231, 185);
   box-shadow: 0px 15px 20px rgba(114, 231, 185, 0.4);
-  color: rgb(255, 225, 187);
+  color: rgb(56, 56, 56);
   transform: translateY(-7px);
+}
+
+.bottomAtButton {
+  margin-top: 20%;
+}
+
+.textBox {
+  border-radius: 12px;
+}
+
+.addUserForm {
+  /* text-align: center; */
+  padding-left: 35%;
+  padding-top: 5%;
+  padding-bottom: 5%;
 }

@@ -24,15 +24,22 @@ function getDBAndProfile (id, db = database) {
     return db ('profiles')
     .join('dietaryRequirements', 'profiles.user_id', 'dietaryRequirements.person_id')
     .select('*')
-
 }
 
 
-function getFullProfiles (db = database) {
+function getFullProfile (db = database) {
     return db('profiles')
     .where('id', id)
     .first()
 }
+
+
+function getProfile(id, db = database) {
+    return db('Posts')
+    .where('id', id)
+    .first()
+}
+
 
 function getUser(id, db = database) {
     return db('profile')
@@ -44,13 +51,6 @@ function getUser(id, db = database) {
 function createUser(userData, db = database){
     return db('profile')
     .insert(userData)
-  }
-
-
-function getProfile(id, db = database) {
-    return db('Posts')
-    .where('id', id)
-    .first() //first or select? What is the difference?
 }
 
 
@@ -73,7 +73,7 @@ function getWeekList(id, db = database) {
 
 module.exports = {
     joinProfileAndDR,
-    getFullProfiles,
+    getFullProfile,
     getDBAndProfile,
     getUser,
     createUser,

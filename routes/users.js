@@ -21,7 +21,7 @@ router.get('/', (req, res) => {
 
 
 router.get('/profile', (req, res) => {
-    getProfiles()
+    getFullProfile()
     .then(data => {
         res.render('profileList', data)
     })
@@ -61,6 +61,7 @@ router.post('/addUser', (req, res) => {
       .then(id => db.getUser(id))
       .then(user => {
         res.render(user)
+    })
 })
 
 
@@ -91,3 +92,6 @@ router.get('/addDayAway', (req, res) => {
     res.render('addDayAway')
     //redirect to /calendar
 })
+
+
+module.exports = router
