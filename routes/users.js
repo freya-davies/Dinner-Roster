@@ -79,7 +79,7 @@ router.post('/addUser', (req, res) => {
 
 
 router.get('/dietaryRequirements', (req, res) => {
-    db.getDBAndProfile()
+    db.joinDBAndProfile()
     .then(data => {
         console.log(data)
         res.render('dietaryRequirements', {
