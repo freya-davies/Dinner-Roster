@@ -20,7 +20,7 @@ function joinProfileAndDR (db = database) {
 }
 
 
-function getDBAndProfile (db = database) {
+function joinDBAndProfile (db = database) {
     return db ('profiles')
     .join('dietaryRequirements', 'profiles.user_id', 'dietaryRequirements.person_id')
     // .select('*')
@@ -33,16 +33,16 @@ function getAllProfiles (db = database) {
 }
 
 
-function addNewProfile(personInfo, db = database){
-    return db('profiles')
-    .insert(personInfo)
-}
-
-
 function getProfile(id, db = database) {
     return db('profiles')
     .where('user_id', id)
     .select()
+}
+
+
+function addNewProfile(personInfo, db = database){
+    return db('profiles')
+    .insert(personInfo)
 }
 
 
@@ -77,10 +77,11 @@ function getWeekList(id, db = database) {
 
 module.exports = {
     joinProfileAndDR,
-    getDBAndProfile,
+    joinDBAndProfile,
     getAllProfiles,
     getProfile,
     addNewProfile,
+    getProfileIdWithName,
     getRequirement,
     getAllRequirements,
     getWeekList,

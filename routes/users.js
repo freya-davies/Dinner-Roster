@@ -40,7 +40,7 @@ router.get('/profile', (req, res) => {
 router.get('/profile/:id', (req, res) => {
     let id = req.params.id
     
-    db.joinProfileAndDR()
+    db.joinDBAndProfile()
     .then(db.getProfile(id))
     .then(profileData => {
         console.log("THE DATA IS ", profileData)
@@ -64,22 +64,29 @@ router.get('/addUser', (req, res) => {
 
 router.post('/addUser', (req, res) => {
     let userName = req.body.name
-    let userImg = req.body.Img
+    let imgToUpload = req.body.userImage
     // let userRequirement = req.body.userRequirement
     let newProfile = {
         name : userName, 
-        user_imgage: userImg,
+        user_image : imgToUpload,
         // userRequirement, userRequirement,
     }
 
     db.addNewProfile(newProfile)
+    .then(x => {
+        console.log("hello", x)
+    })
     // .then( x => res.send(x)
         // let id = newProfile.user_id
         // res.render('profile/' + id)
     // )
     db.getProfileIdWithName(userName)
+    .then( x => {
+        console.log('hello again', x)
+    })
     .then((id) => {
-        res.redirect('/profile/:id')
+        console.log(id)
+        // res.redirect('/profile/:id')
     })
 })
 
