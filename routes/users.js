@@ -81,13 +81,27 @@ router.post('/addUser', (req, res) => {
 router.get('/dietaryRequirements', (req, res) => {
     db.joinDBAndProfile()
     .then(data => {
-        console.log(data)
+        // console.log(data)
         res.render('dietaryRequirements', {
             data: data
         })
     })
 })
 
+// not working yet. Need functions too.
+// router.get('/addDietaryRequirement/:id', (req, res) => {
+//     res.render('addNewDietaryRequirement')
+// })
+
+// router.post('/addDietaryRequirement/:id', (req, res) => {
+//     let id = req.params.id
+
+//     db.addDietaryRequirement(id)
+//     db.joinProfileAndDR()
+//     .then(x => {
+//         res.redirect('profile/' + id, )
+//     })
+// })
 
 router.get('/addDayAway', (req, res) => {
     res.render('addDayAway')
