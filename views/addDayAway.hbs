@@ -1,10 +1,15 @@
 <h2>Going away? Well, you're on the right page</h2>
-<h3>Here you can note down when you are off on adventures and not around for dinner</h3>
+<h3 class="centerText" >Here you can note down when you are off on adventures and not around for dinner</h3>
 
 {{!-- do I put id in here? I want it do go to this from profile page and take ID with it --}}
 <form action="/addDayAway xxxxxxxx" method="POST"> 
-{{!-- How does the calendar work? --}}
+
+</section>
 {{!-- Name: <input type="text" name="name"><br> --}}
-<a href="/calendar"><input type="submit" value="Done! Now show me the calendar!"></a>
+<section class="buttonWrap" >
+    <a href="/calendar"><input class="button buttonLarge buttonAtBottom" type="submit" value="Done! Now show me the calendar!"></a>
+</section>
+{{!-- if day already picked ask if they want to pick another day or take day from who already has that day --}}
+
 </form>
 

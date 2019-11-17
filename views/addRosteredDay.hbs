@@ -1,0 +1,22 @@
+<h2>Pick a day, any day, but perhaps a day that no one else is cooking!</h2>
+<h3 class="centerText" >Select a day of the week you would like to cook on. Ideally not on a Friday or a Saturday as people are usually out and about on these days.</h3>
+
+<form action="/selectDay/:id" method="POST"> 
+<section>
+    What day would you like to cook on?
+      <select class="button buttonDropdown" name="days">
+        <option class="dropdownList" value="Monday">Monday</option>
+        <option class="dropdownList" value="Tuesday">Tuesday</option>
+        <option class="dropdownList" value="Wednesday">Wednesday</option>
+        <option class="dropdownList" value="Thursday">Thursday</option>
+        <option class="dropdownList" value="Friday">Friday</option>
+        <option class="dropdownList" value="Saturday">Saturday</option>
+        <option class="dropdownList" value="Sunday">Sunday</option>
+    </select>
+</section>
+{{!-- Name: <input type="text" name="name"><br> --}}
+<section class="buttonWrap" >
+    <a href="/calendar"><input class="button buttonLarge buttonAtBottom" type="submit" value="Done! Now show me the calendar!"></a>
+</section>
+
+</form>

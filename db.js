@@ -46,6 +46,13 @@ function addNewProfile(personInfo, db = database){
 }
 
 
+function updateDayInProfile(day, id, db = database) {
+    return db('profiles') 
+    .where('id', id)
+    .update('daysRostered', day)
+}
+
+
 function getProfileIdWithName(name, db = database) {
     return db('profiles')
     .where('name', name)
@@ -81,6 +88,7 @@ module.exports = {
     getAllProfiles,
     getProfile,
     addNewProfile,
+    updateDayInProfile,
     getProfileIdWithName,
     getRequirement,
     getAllRequirements,

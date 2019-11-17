@@ -95,4 +95,41 @@ router.get('/addDayAway', (req, res) => {
 })
 
 
+router.get('/selectDay/:id', (req, res) => {
+    res.render('addRosteredDay')
+})
+
+
+router.post('/selectDay/:id', (req, res) => {
+    // define objs to send,
+    // add obj to profile
+    // update calendar 
+    // redirect to calendar
+    let id = req.body.id //how to pass id over from profile
+    let info = {
+        daysRostered: req.body.days,
+    }
+    // console.log("id is: ", id)
+
+    db.updateDayInProfile(info, id) 
+    then( x => {
+        res.redirect('/calendar')
+    })
+
+
+    
+    // let userName = req.body.name
+    // let imgToUpload = req.body.userImage
+    // let newProfile = {
+    //     name : userName, 
+    //     user_image : imgToUpload,
+    // }
+
+    // db.addNewProfile(newProfile)
+    // .then(id => {
+    //     // console.log("hello", id)
+    //     res.redirect('/profile/' + id)
+    // })
+})
+
 module.exports = router

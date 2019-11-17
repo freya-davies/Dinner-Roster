@@ -1,7 +1,7 @@
 <h1>A new face, welcome!</h1>
 <h2>Here you can sign up and get cooking for your beloved house-mates. Oh how wonderful!</h2>
 
-<form class="addUserForm" action="/addUser" method="POST">
+<form action="/addUser" method="POST">
   <section>
       Name: 
     <input class="textBox" type="text" name="name">
@@ -9,7 +9,7 @@
   
   <section class="spacer" >
     Photo: 
-    <input class="button" type="file" name="userImage">
+    <input class="button buttonSmall" type="file" name="userImage">
   </section>
   
   {{!-- <section class="spacer">
@@ -18,7 +18,7 @@
   </section>
    --}}
   <section class="buttonWrap">
-    <a href="/calendar"><input type="submit" class="button bottomAtButton" name="newUser" value="Done! Now show me the calendar!"></a>
+    <a href="/calendar"><input type="submit" class="button buttonLarge buttonAtBottom" name="newUser" value="Done! Now show me the calendar!"></a>
   </section>
 </form>
 

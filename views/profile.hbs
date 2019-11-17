@@ -17,14 +17,13 @@
 <p>
     {{name}}
 </p>
-<a href="/dietaryRequirement" method="POST"> <button>New dietary requirement?</button></a>
-<a href="/addDayAway" method="POST"> <button>Going away?</button></a>
+
 
 <h2>Dietary Requirements:</h2> 
 <ul>
-    {{#if dietaryRequirements}}
-    {{#each dietaryRequirements}}
-    <li>{{dietaryRequirements}}</li>
+    {{#if requirement}}
+    {{#each requirement}}
+    <li>{{requirement}}</li>
     {{/each}}
     {{else}}
     <p class="centerText"> 
@@ -32,6 +31,10 @@
     </p>
     {{/if}}
 </ul>
+
+<a href="/dietaryRequirement/{{user_id}}"><input class="button buttonLarge buttonAtBottom" type="submit" value="New dietary requirement?"></a>
+<a href="/addDayAway/{{user_id}}"><input class="button buttonLarge buttonAtBottom" type="submit" value="Going away?"></a>
+<a href="/selectDay/{{user_id}}"><input class="button buttonLarge buttonAtBottom" type="submit" value="Select or change your cooking day"></a>
 
 {{else}}
 <h1>Wha-woh, this profile doesn't exist!!</h1>
