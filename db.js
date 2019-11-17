@@ -59,6 +59,11 @@ function getRequirement(id, db = database) {
     .select()
 }
 
+function getAllRequirements (db = database) {
+    return db('dietaryRequirements')
+    .select()
+}
+
 
 function getWeekList(id, db = database) {
     return db('profiles')
@@ -77,6 +82,7 @@ module.exports = {
     getProfile,
     addNewProfile,
     getRequirement,
+    getAllRequirements,
     getWeekList,
 }
 

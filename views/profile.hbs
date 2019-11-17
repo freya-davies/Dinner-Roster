@@ -5,14 +5,13 @@
 </div> --}}
 
 
-{{#if profiles}}
-{{#each profiles}}
+{{#if profileData}}
 <h1>Oh look it's {{name}}s profile page!!</h1>
 
 
-<div class="profileImgBlock" >
-    {{>stars}}
-<img class="profileImg" src="/images/{{img}}" alt="Image of {{name}}">
+<div class="profilePageImgBox" >
+    {{!-- {{>stars}} --}}
+<img class="profilePageImg" src="/images/{{img}}" alt="Image of {{name}}">
 </div>
 
 <p>
@@ -28,13 +27,12 @@
     <li>{{dietaryRequirements}}</li>
     {{/each}}
     {{else}}
-    <p>
+    <p class="centerText"> 
         {{name}} doesn't have any dietary requirements.
     </p>
     {{/if}}
 </ul>
 
-{{/each}}
 {{else}}
 <h1>Wha-woh, this profile doesn't exist!!</h1>
 <p class="centerText hoverBackground" >

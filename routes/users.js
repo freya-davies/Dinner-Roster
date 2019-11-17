@@ -39,11 +39,14 @@ router.get('/profile', (req, res) => {
 
 router.get('/profile/:id', (req, res) => {
     let id = req.params.id
-
+    
     db.joinProfileAndDR(id)
     .then(db.getProfile(id))
-    .then(data => {
-        res.render('profile', data)
+    .then(profileData => {
+        console.log("THE DATA IS ", profileData)
+        res.render('profile', {
+            profileData : profileData
+        })
     })
     // res.render('profile')
 })
@@ -82,7 +85,13 @@ router.post('/addUser', (req, res) => {
 
 
 router.get('/dietaryRequirements', (req, res) => {
-    res.render('dietaryRequirements')
+    db.getAllRequirements()
+    .then(data => {
+        // console.log(data)
+        res.render('dietaryRequirements', {
+            data: data
+        })
+    })
 })
 
 
