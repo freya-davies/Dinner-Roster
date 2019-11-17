@@ -40,7 +40,7 @@ router.get('/profile', (req, res) => {
 router.get('/profile/:id', (req, res) => {
     let id = req.params.id
     
-    db.joinProfileAndDR(id)
+    db.joinProfileAndDR()
     .then(db.getProfile(id))
     .then(profileData => {
         console.log("THE DATA IS ", profileData)
@@ -85,9 +85,9 @@ router.post('/addUser', (req, res) => {
 
 
 router.get('/dietaryRequirements', (req, res) => {
-    db.getAllRequirements()
+    db.getDBAndProfile()
     .then(data => {
-        // console.log(data)
+        console.log(data)
         res.render('dietaryRequirements', {
             data: data
         })

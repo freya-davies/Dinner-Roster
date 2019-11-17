@@ -5,9 +5,9 @@
     <img  class="dRImg" src="/images/turtle.jpg" alt="A turtle about to eat a strawberry">
     <h3 class="centerText">The people have spoken! Your challenge is to make a meal but not just any 
         meal, one which is amazeballs for people who have the following requirements:</h3>
-<ul>
+<ul class="customBulletsBox" >
 {{#each data}}
-    <a href="/profile/{{person_id}}""><li>{{requirement}}</li></a>
+    <a class="customBullets" href="/profile/{{person_id}}"><li style="listStyleImage: url('/images/{{user_image}}'); padding: .3em 0 1em 40px;">{{requirement}}</li></a>
 {{/each}}
 {{else}}
     <img class="dRImg" src="/images/squirrel.jpg" alt="A squirrel stuffing nuts into its mouth">

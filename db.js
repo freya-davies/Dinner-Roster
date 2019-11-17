@@ -8,7 +8,7 @@ const database = knex(config)
 //     // console.log('Is this bring back data?', data)
 // })
 
-function joinProfileAndDR (id, db = database) {
+function joinProfileAndDR (db = database) {
     return db ('dietaryRequirements')
     .join('profiles', 'dietaryRequirements.person_id', 'profiles.user_id')
     // .select('*')
@@ -20,7 +20,7 @@ function joinProfileAndDR (id, db = database) {
 }
 
 
-function getDBAndProfile (id, db = database) {
+function getDBAndProfile (db = database) {
     return db ('profiles')
     .join('dietaryRequirements', 'profiles.user_id', 'dietaryRequirements.person_id')
     // .select('*')
