@@ -72,6 +72,13 @@ function getAllRequirements (db = database) {
 }
 
 
+function addDayAway(id, day, db = database) {
+    return db('profile')
+    .where('id', id)
+    .update('daysAway', day)
+}
+
+
 function getWeekList(id, db = database) {
     return db('profiles')
     .where('calendar_id', id)
@@ -92,6 +99,7 @@ module.exports = {
     getProfileIdWithName,
     getRequirement,
     getAllRequirements,
+    addDayAway,
     getWeekList,
 }
 

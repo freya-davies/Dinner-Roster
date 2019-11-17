@@ -95,6 +95,19 @@ router.get('/addDayAway', (req, res) => {
 })
 
 
+router.post('/addDayAway/:id', (req, res) => {
+    let id = req.body.id
+    let info = {
+        daysAway: req.body.dayEntered
+    }
+
+    db.addDayAway(id)
+    .then(x => {
+        res.redirect('profile/' + id)
+    })
+})
+
+
 router.get('/selectDay/:id', (req, res) => {
     res.render('addRosteredDay')
 })
