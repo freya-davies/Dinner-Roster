@@ -20,10 +20,19 @@ function joinProfileAndDR (db = database) {
 }
 
 
-function joinDBAndProfile (db = database) {
+function joinDrAndProfile (db = database) {
     return db ('profiles')
     .join('dietaryRequirements', 'profiles.user_id', 'dietaryRequirements.person_id')
     // .select('*')
+}
+
+
+function getDRAndProfileById (id, db = database) {
+    return db ('profiles')
+    .where('user_id', id)
+    .leftJoin('dietaryRequirements', 'profiles.user_id', 'dietaryRequirements.person_id')
+    // .select('*')
+
 }
 
 
@@ -34,8 +43,9 @@ function getAllProfiles (db = database) {
 
 
 function getProfile(id, db = database) {
+    console.log('ID IS: ', id)
     return db('profiles')
-    .where('user_id', id)
+    // .where('user_id', id)
     .select()
 }
 
@@ -48,7 +58,7 @@ function addNewProfile(personInfo, db = database){
 
 function updateDayInProfile(day, id, db = database) {
     return db('profiles') 
-    .where('id', id)
+    .where('user_id', id)
     .update('daysRostered', day)
 }
 
@@ -62,7 +72,7 @@ function getProfileIdWithName(name, db = database) {
 
 function getRequirement(id, db = database) {
     return db('dietaryRequirements')
-    .where('Requirement_id', id)
+    .where('requirement_id', id)
     .select()
 }
 
@@ -72,10 +82,10 @@ function getAllRequirements (db = database) {
 }
 
 
-function addDayAway(id, day, db = database) {
-    return db('profile')
-    .where('id', id)
-    .update('daysAway', day)
+function addDayAway(id, info, db = database) {
+    return db('profiles')
+    .where('user_id', id)
+    .update('daysAway', info)
 }
 
 
@@ -91,7 +101,8 @@ function getWeekList(id, db = database) {
 
 module.exports = {
     joinProfileAndDR,
-    joinDBAndProfile,
+    getDRAndProfileById,
+    joinDrAndProfile,
     getAllProfiles,
     getProfile,
     addNewProfile,

@@ -7,8 +7,8 @@
         {{#each allProfilesData}}
             <a href="profile/{{user_id}}">
                 <div class="profileImgBlock" onClick="something goes in here.">
-                    <img class="profileImg portrait"  src="/images/{{user_image}}" alt="{{name}}'s image'">
-                    <h2>{{name}}</h2>
+                    <img class="profileImg"  src="/images/{{user_image}}" alt="{{name}}'s image'">
+                    <h2 class="buttonAtBottom" >{{name}}</h2> {{!-- make sure this is included --}}
                 </div>
             </a>
         {{/each}}

@@ -5,25 +5,22 @@
 </div> --}}
 
 
-{{#if profileData}}
+{{#if name}}
 <h1>Oh look it's {{name}}s profile page!!</h1>
 
 
-<div class="profilePageImgBox" >
+<div class="centerText" >
     {{!-- {{>stars}} --}}
-<img class="profilePageImg" src="/images/{{img}}" alt="Image of {{name}}">
+<img class="profilePageImg" src="/images/{{img}}" alt="Image of {{profileData.name}}">
 </div>
 
-<p>
-    {{name}}
-</p>
 
 
 <h2>Dietary Requirements:</h2> 
-<ul>
+<ul class="centerList" >
     {{#if requirement}}
     {{#each requirement}}
-    <li>{{requirement}}</li>
+    <li>{{this}}</li>
     {{/each}}
     {{else}}
     <p class="centerText"> 
@@ -32,9 +29,12 @@
     {{/if}}
 </ul>
 
-<a href="addDietaryRequirement/{{user_id}}"><input class="button buttonLarge buttonAtBottom" type="submit" value="New dietary requirement?"></a>
-<a href="addDayAway/{{user_id}}"><input class="button buttonLarge buttonAtBottom" type="submit" value="Going away?"></a>
-<a href="selectDay/{{user_id}}"><input class="button buttonLarge buttonAtBottom" type="submit" value="Select or change your cooking day"></a>
+<div class="centerText" >
+    <a href="/addDietaryRequirement/{{user_id}}"><input class="button buttonLarge buttonAtBottom" type="submit" value="New dietary requirement?"></a>
+    <a href="/addDayAway/{{user_id}}"><input class="button buttonLarge buttonAtBottom" type="submit" value="Going away?"></a>
+    <a href="/selectDay/{{user_id}}"><input class="button buttonLarge buttonAtBottom" type="submit" value="Select or change your cooking day"></a>
+
+</div>
 
 {{else}}
 <h1>Wha-woh, this profile doesn't exist!!</h1>

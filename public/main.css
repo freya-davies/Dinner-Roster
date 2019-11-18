@@ -102,7 +102,7 @@ h2 {
   min-width: ;
 } */
 
-.bunnyImg, .dRImg, .profileImg, .starImgs {
+.bunnyImg, .dRImg, .profileImg, .starImgs, .profilePageImg {
   border-radius: 25px;
 }
 
@@ -112,10 +112,8 @@ h2 {
   margin-right: 10%;
 }
 
-.dRImg {
-  width: 30%;
-  margin-left: 35%;
-  margin-right: 35%;
+.dRImg, .profilePageImg {
+  height: 25%;
 }
 
 .imgBox {
@@ -131,6 +129,8 @@ h2 {
   width: 200px;
   height: 200px;
   overflow: hidden;
+  margin-left: 5%;
+  margin-right: 5%;
 }
 
 .profileImg {
@@ -148,7 +148,7 @@ h2 {
   width: auto;
   -webkit-transform: translate(-50%,-50%);
       -ms-transform: translate(-50%,-50%);
-          transform: translate(-50%,-50%);
+          transform: translate(-50%,-50%);    
 }
 
 .starImgs {
@@ -180,9 +180,11 @@ h2 {
 .starRightTop {
   border-radius: 0px 25% 0px 0px;
 }
+
 .starRightBottom {
   border-radius: 0px 0px 25% 0px;
 }
+
 .starLeftBottom {
   border-radius: 0px 0px 0px 25%;
 }
@@ -197,10 +199,6 @@ h2 {
   margin-top: 200px;
   margin-left: 0px;
 } */
-
-.profileListImgages {
-
-}
 
 
 
@@ -244,12 +242,17 @@ h2 {
  }
 
 .buttonAtBottom {
-  margin-top: 20%;
+  margin-top: 5%;
 }
 
 .buttonDropdown {
   height: 25px;
+}
 
+.buttonDropdown option {
+  background-color: rgb(114, 231, 185);
+  box-shadow: 0px 15px 20px rgba(114, 231, 185, 0.4);
+  color: rgb(56, 56, 56);
 }
 
 .textBox {
@@ -280,8 +283,8 @@ form {
   color: rgb(56, 56, 56);
 } */
 
-.buttonDropdown option {
-  background-color: rgb(114, 231, 185);
-  box-shadow: 0px 15px 20px rgba(114, 231, 185, 0.4);
-  color: rgb(56, 56, 56);
+
+.centerList {
+  margin-left: 40%;
 }
+

@@ -40,13 +40,21 @@ router.get('/profile', (req, res) => {
 router.get('/profile/:id', (req, res) => {
     let id = req.params.id
     
-    db.joinDBAndProfile()
-    .then(db.getProfile(id))
+    db.getDRAndProfileById(id)
     .then(profileData => {
-        // console.log("THE DATA IS ", profileData)
-        res.render('profile', {
-            profileData : profileData
-        })
+        // console.log(profileData)
+        if(profileData.length) {
+            res.render('profile', {
+                // profileData : profileData,
+                name : profileData[0].name,
+                img : profileData[0].user_image,
+                user_id : profileData[0].user_id,
+                requirement : profileData.map(data => data.requirement).filter(data => data != null)
+    
+            })
+        } else {
+            res.render('profile')
+        }
     })
     // res.render('profile')
 })
@@ -79,7 +87,7 @@ router.post('/addUser', (req, res) => {
 
 
 router.get('/dietaryRequirements', (req, res) => {
-    db.joinDBAndProfile()
+    db.joinDrAndProfile()
     .then(data => {
         // console.log(data)
         res.render('dietaryRequirements', {
@@ -88,36 +96,37 @@ router.get('/dietaryRequirements', (req, res) => {
     })
 })
 
-// not working yet. Need functions too.
-// router.get('/addDietaryRequirement/:id', (req, res) => {
-//     res.render('addNewDietaryRequirement')
-// })
+router.get('/addDietaryRequirement/:id', (req, res) => {
+    res.render('addNewDietaryRequirement')
+})
 
-// router.post('/addDietaryRequirement/:id', (req, res) => {
-//     let id = req.params.id
+router.post('/addDietaryRequirement/:id', (req, res) => {
+    let id = req.params.id
 
-//     db.addDietaryRequirement(id)
-//     db.joinProfileAndDR()
-//     .then(x => {
-//         res.redirect('profile/' + id, )
-//     })
-// })
+    db.addDietaryRequirement(id)
+    db.joinProfileAndDR()
+    .then(x => {
+        res.redirect('profile/' + id, )
+    })
+})
 
-router.get('/addDayAway', (req, res) => {
+router.get('/addDayAway/:id', (req, res) => {
     res.render('addDayAway')
     //redirect to /calendar
 })
 
 
 router.post('/addDayAway/:id', (req, res) => {
-    let id = req.body.id
-    let info = {
-        daysAway: req.body.dayEntered
-    }
+    let id = req.params.id
+    let info = req.body.dayEntered
 
-    db.addDayAway(id)
-    .then(x => {
-        res.redirect('profile/' + id)
+    // console.log('ID IS: ', id) // id is currently undefined :(
+    //     console.log('INFO IS: ', info)
+
+    db.addDayAway(id, info)
+    .then(id => {
+        // console.log("hello", id)
+        res.redirect('/calendar')
     })
 })
 
@@ -133,12 +142,11 @@ router.post('/selectDay/:id', (req, res) => {
     // update calendar 
     // redirect to calendar
     let id = req.body.id //how to pass id over from profile
-    let info = {
-        daysRostered: req.body.days,
-    }
-    // console.log("id is: ", id)
+    let day = req.body.days
 
-    db.updateDayInProfile(info, id) 
+    // console.log("ID IS: ", id)
+
+    db.updateDayInProfile(day, id) 
     then( x => {
         res.redirect('/calendar')
     })
