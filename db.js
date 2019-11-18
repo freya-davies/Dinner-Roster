@@ -20,7 +20,7 @@ function joinProfileAndDR (db = database) {
 }
 
 
-function joinDrAndProfile (db = database) {
+function joinDRAndProfile (db = database) {
     return db ('profiles')
     .join('dietaryRequirements', 'profiles.user_id', 'dietaryRequirements.person_id')
     // .select('*')
@@ -102,7 +102,7 @@ function getWeekList(id, db = database) {
 module.exports = {
     joinProfileAndDR,
     getDRAndProfileById,
-    joinDrAndProfile,
+    joinDRAndProfile,
     getAllProfiles,
     getProfile,
     addNewProfile,
