@@ -93,7 +93,7 @@ router.get('/dietaryRequirements', (req, res) => {
         res.render('dietaryRequirements', {
             data: data
         })
-    })
+    });
 })
 
 router.get('/addDietaryRequirement/:id', (req, res) => {

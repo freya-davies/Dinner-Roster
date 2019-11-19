@@ -78,8 +78,16 @@ h2 {
   text-align: center;
 }
 
-.spacer {
+.centerList {
+  margin-left: 40%;
+}
+
+.spacerTop {
   padding-top: 2%;
+}
+
+.spacerBottom {
+  padding-bottom: 2%;
 }
 
 .hoverBackground:hover {
@@ -284,7 +292,39 @@ form {
 } */
 
 
-.centerList {
-  margin-left: 40%;
+
+/* calendar styling */
+
+.calendar {
+  margin: 15px;
+  background-color: rgba(255, 0, 0, 0.226);
 }
 
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  flex: 1;
+}
+
+.blue-column {
+  border-style: solid;
+  border-width: 5px;
+  border-color: rgba(0, 0, 255, 0.267);
+  height: 300px;
+}
+
+.green-column {
+  border-style: solid;
+  border-width: 5px;
+  border-color: rgba(0, 128, 0, 0.295);
+
+  height: 300px;
+}
