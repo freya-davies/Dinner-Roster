@@ -4,7 +4,7 @@ exports.up = function(knex) {
     table.string('requirement_id')
     table.string('requirement')
     table.string('person_id')
-
+    table.string('searchItem')
   })
 };
 

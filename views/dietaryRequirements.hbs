@@ -9,7 +9,14 @@
         meal, one which is amazeballs for people who have the following requirements:</h3>
 <ul class="customBulletsBox centerList" >
 {{#each data}}
+    {{#if searchItem}}
+    <div class="highlight" >
+        <a class="customBullets" href="/profile/{{person_id}}"><li style="listStyleImage: url('/images/{{user_image}}'); padding: .3em 0 1em 40px;">{{requirement}}</li></a>
+    </div>
+    {{else}}
     <a class="customBullets" href="/profile/{{person_id}}"><li style="listStyleImage: url('/images/{{user_image}}'); padding: .3em 0 1em 40px;">{{requirement}}</li></a>
+    {{/if}}
+
 {{/each}}
 {{else}}
     <img class="dRImg" src="/images/squirrel.jpg" alt="A squirrel stuffing nuts into its mouth">
@@ -22,7 +29,7 @@
 </div>
 
 <div>
-    <form action="/searchDietaryRequirements">
+    <form action="/searchDietaryRequirements" method='POST'>
     <h3>Check to see if something is on the list with minimal reading.</h3>
     <p class="spacerBottom" >
         <em>Please note that this search function only finds words that were mentioned.</em>

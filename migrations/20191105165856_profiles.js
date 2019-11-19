@@ -6,7 +6,6 @@ exports.up = function(knex) {
     table.string('user_image')
     table.string('daysRostered')
     table.string('daysAway')
-
   })
 };
 

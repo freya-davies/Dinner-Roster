@@ -40,7 +40,7 @@ router.get('/profile', (req, res) => {
 router.get('/profile/:id', (req, res) => {
     let id = req.params.id
     
-    db.getDRAndProfileById(id)
+    db.getProfileAndDRById(id)
     .then(profileData => {
         // console.log(profileData)
         if(profileData.length) {
@@ -87,6 +87,7 @@ router.post('/addUser', (req, res) => {
 
 
 router.get('/dietaryRequirements', (req, res) => {
+    db.clearSearchedItem()
     db.joinDRAndProfile()
     .then(data => {
         // console.log(data)
@@ -96,9 +97,11 @@ router.get('/dietaryRequirements', (req, res) => {
     });
 })
 
+
 router.get('/addDietaryRequirement/:id', (req, res) => {
     res.render('addNewDietaryRequirement')
 })
+
 
 router.post('/addDietaryRequirement/:id', (req, res) => {
     let id = req.params.id
@@ -110,12 +113,20 @@ router.post('/addDietaryRequirement/:id', (req, res) => {
     })
 })
 
+
 router.post('/searchDietaryRequirements', (req, res) => {
     let searchedItem = req.body.searchItem
+    console.log("SEARCHED ITEM: ", searchedItem)
 
+    db.clearSearchedItem() //This is being skipped :(
+    console.log("YAY, THE CLEARING FUNCTION HAS RUN!")
     db.searchDRDB(searchedItem)
-    
+    .then(x => {
+        console.log('X IS: ', x)
+        res.redirect('dietaryRequirements')
+    } )
 })
+
 
 router.get('/addDayAway/:id', (req, res) => {
     res.render('addDayAway')

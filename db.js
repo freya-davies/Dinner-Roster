@@ -27,12 +27,11 @@ function joinDRAndProfile (db = database) {
 }
 
 
-function getDRAndProfileById (id, db = database) {
+function getProfileAndDRById (id, db = database) {
     return db ('profiles')
     .where('user_id', id)
     .leftJoin('dietaryRequirements', 'profiles.user_id', 'dietaryRequirements.person_id')
     // .select('*')
-
 }
 
 
@@ -43,7 +42,7 @@ function getAllProfiles (db = database) {
 
 
 function getProfile(id, db = database) {
-    console.log('ID IS: ', id)
+    // console.log('ID IS: ', id)
     return db('profiles')
     // .where('user_id', id)
     .select()
@@ -76,6 +75,7 @@ function getRequirement(id, db = database) {
     .select()
 }
 
+
 function getAllRequirements (db = database) {
     return db('dietaryRequirements')
     .select()
@@ -96,12 +96,27 @@ function getWeekList(id, db = database) {
 }
 
 
+function clearSearchedItem(db = database) {
+    return db('dietaryRequirements')
+    .update('searchItem', null)
+}
+
+
+function searchDRDB(searchedItem, db = database) {
+    console.log('FUNCTION HAS GOT SEARCHEDITEM, ITS: ', searchedItem)
+    return db('dietaryRequirements')
+    .where('requirement', searchedItem)
+    .update('searchItem', 'Marked')
+}
+
+
+
 
 //functions go in here
 
 module.exports = {
     joinProfileAndDR,
-    getDRAndProfileById,
+    getProfileAndDRById,
     joinDRAndProfile,
     getAllProfiles,
     getProfile,
@@ -112,5 +127,7 @@ module.exports = {
     getAllRequirements,
     addDayAway,
     getWeekList,
+    clearSearchedItem,
+    searchDRDB,
 }
 
