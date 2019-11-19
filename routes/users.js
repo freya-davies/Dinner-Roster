@@ -110,6 +110,13 @@ router.post('/addDietaryRequirement/:id', (req, res) => {
     })
 })
 
+router.post('/searchDietaryRequirements', (req, res) => {
+    let searchedItem = req.body.searchItem
+
+    db.searchDRDB(searchedItem)
+    
+})
+
 router.get('/addDayAway/:id', (req, res) => {
     res.render('addDayAway')
     //redirect to /calendar

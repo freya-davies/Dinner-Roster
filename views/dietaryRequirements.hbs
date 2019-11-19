@@ -21,7 +21,27 @@
 </ul>
 </div>
 
-<div class="centerText hoverBackground">
+<div>
+    <form action="/searchDietaryRequirements">
+    <h3>Check to see if something is on the list with minimal reading.</h3>
+    <p class="spacerBottom" >
+        <em>Please note that this search function only finds words that were mentioned.</em>
+    </p>
+        <section>
+            Search: 
+            <input class="textBox" type="text" name="searchItem" >
+        </section>
+
+        <section class="buttonWrap" >
+            <input class="button buttonLarge buttonAtBottom" type="submit" value="Search the list">
+        </section>
+
+    {{!-- Can I do an if statement to see if 'thing in textbox' = thingOnList then... 
+     add 'thingOnList' is either  'on list' or not. --}}
+    </form>
+</div>
+
+<div class="centerText hoverBackground spacerTop spacerBottom">
   <a href="/profile">  <h2>Remembered you are highly allergic to nuts? Quick, add it to your profile!</h2></a>
     
 </div>
