@@ -87,29 +87,32 @@ router.post('/addUser', (req, res) => {
 
 
 router.get('/dietaryRequirements', (req, res) => {
-    db.clearSearchedItem()
-    db.joinDRAndProfile()
-    .then(data => {
-        // console.log(data)
-        res.render('dietaryRequirements', {
-            data: data
+    // db.clearSearchedItem()
+    // .then(() => {
+        db.joinDRAndProfile()
+        .then(data => {
+            // console.log(data)
+            res.render('dietaryRequirements', {
+                data: data
+            })
         })
-    });
+    // })
 })
 
 
 router.get('/addDietaryRequirement/:id', (req, res) => {
-    res.render('addNewDietaryRequirement')
+    res.render('addNewDietaryRequirement', {user_id: req.params.id})
 })
 
 
 router.post('/addDietaryRequirement/:id', (req, res) => {
     let id = req.params.id
+    let requirement = req.body.requirement
 
-    db.addDietaryRequirement(id)
-    db.joinProfileAndDR()
+    db.addDietaryRequirement(id, requirement)
+    // db.joinProfileAndDR()
     .then(x => {
-        res.redirect('profile/' + id, )
+        res.redirect('/profile/' + id, )
     })
 })
 
@@ -118,18 +121,21 @@ router.post('/searchDietaryRequirements', (req, res) => {
     let searchedItem = req.body.searchItem
     console.log("SEARCHED ITEM: ", searchedItem)
 
-    db.clearSearchedItem() //This is being skipped :(
-    console.log("YAY, THE CLEARING FUNCTION HAS RUN!")
-    db.searchDRDB(searchedItem)
-    .then(x => {
-        console.log('X IS: ', x)
-        res.redirect('dietaryRequirements')
-    } )
+    db.clearSearchedItem()
+    .then( () => {
+        console.log("YAY, THE CLEARING FUNCTION HAS RUN!")
+        db.searchDRDB(searchedItem)
+        .then(x => {
+            console.log('X IS: ', x)
+            res.redirect('dietaryRequirements')
+        
+        })
+    })
 })
 
 
 router.get('/addDayAway/:id', (req, res) => {
-    res.render('addDayAway')
+    res.render('addDayAway', {user_id: req.params.id})
     //redirect to /calendar
 })
 
@@ -150,7 +156,7 @@ router.post('/addDayAway/:id', (req, res) => {
 
 
 router.get('/selectDay/:id', (req, res) => {
-    res.render('addRosteredDay')
+    res.render('addRosteredDay', {user_id: req.params.id})
 })
 
 

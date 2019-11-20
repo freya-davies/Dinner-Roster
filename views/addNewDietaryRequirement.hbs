@@ -1,11 +1,11 @@
 <h2>Got an allergy or something you are not eating? Great! Add it to the list.</h2>
 <h3 class="centerText">Here you can let your housemates know what foods to avoid using when cooking.</h3>  
 
-<form action="/addDietaryRequirement/:id" method="POST"> 
+<form action="/addDietaryRequirement/{{user_id}}" method="POST"> 
 
 <section>
     Requirement:
-    <input class="textBox" type="text" name="dayEntered" value="">
+    <input class="textBox" type="text" name="requirement" value="">
 </section>
 
 {{!-- <section>

@@ -90,6 +90,9 @@ h1 {
 
 .highlight {
   background-color: rgba(31, 24, 43, 0.397);
+  color: rgb(255, 225, 187);
+  width: 20%;
+  border-radius: 12%;
 }
 
 

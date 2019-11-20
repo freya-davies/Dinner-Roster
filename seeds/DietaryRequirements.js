@@ -8,7 +8,7 @@ exports.seed = function(knex) {
         {requirement_id: 1, requirement: 'Olives', person_id: '5', searchItem: null},
         {requirement_id: 2, requirement: 'Eggplant', person_id: '5', searchItem: null},
         {requirement_id: 3, requirement: 'Coconut', person_id: '5', searchItem: null},
-        {requirement_id: 3, requirement: 'Quinoa', person_id: '1', searchItem: null}
+        {requirement_id: 4, requirement: 'Quinoa', person_id: '1', searchItem: null}
       ]);
     });
 };

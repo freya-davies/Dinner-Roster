@@ -109,6 +109,14 @@ function searchDRDB(searchedItem, db = database) {
     .update('searchItem', 'Marked')
 }
 
+function addDietaryRequirement(id, requirement, db = database) {
+    return db('dietaryRequirements')
+    .insert({
+        person_id: id, 
+        requirement,
+    })
+}
+
 
 
 
@@ -129,5 +137,6 @@ module.exports = {
     getWeekList,
     clearSearchedItem,
     searchDRDB,
+    addDietaryRequirement,
 }
 
