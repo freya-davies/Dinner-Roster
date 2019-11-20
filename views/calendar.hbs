@@ -1,63 +1,80 @@
-<h1>Weekly Calendar!</h2>
-<h2 class="centerText spacerBottom" >See who's down for cooking this week</h3>
 
-<div id="calendar" {{!--style="height: 800px;"--}}>
+<h1>Weekly Calendar!</h1>
+<h2 class="centerText spacerBottom" >See who's down for cooking this week</h2>
 
+<div class="calendarPage">
+
+<div class="calendar" {{!--style="height: 800px;"--}}>
+
+    {{!-- <p>profile data: </p>
+    {{profileData}}
+
+    <p>this: </p>
+    {{this}}
+
+    <p>each this: </p>
+    {{#each this}}
+        {{name}}
+    {{/each}} --}}
 
     <div class='calendar'>
-    <div class='row'>
-        <div class='column'>
-            <div class='green-column'>
-                <h3 class="day Monday centerText">Monday</h2>
-                {{#if monday}}
-                {{user_image}}
-                {{/if}}
+        <div class='row'>
+            <div class='column'>
+                <div class='green-column'>
+                    <h3 class="day Monday centerText">Monday</h2>
+                    {{#each this}}
+                        {{#if monday}}
+                            <img src="/images/{{user_image}}" alt="{{name}}'s image'">
+                        {{/if}}
+                    {{/each}}
+                </div>
+            </div>
+            <div class='column'>
+                <div class='blue-column'>
+                    <h3 class="day Tuesday centerText">Tuesday</h2>
+                    {{#if tuesday}}
+                        <img src="/images/{{tuesday}}" alt="{{name}}'s image'">
+                    {{/if}}
+                </div>
+            </div>
+            <div class='column'>
+                <div class='green-column'>
+                    <h3 class="day Wednesday centerText">Wednesday</h2>
+                    {{#if wednesday}}
+                    {{user_image}}
+                    {{/if}}
+                </div>
+            </div>
+            <div class='column'>
+                <div class='blue-column'>
+                    <h3 class="day Thursday centerText">Thursday</h2>
+                    {{#if thursday}}
+                    {{user_image}}
+                    {{/if}}
+                </div>
             </div>
         </div>
-        <div class='column'>
-            <div class='blue-column'>
-                <h3 class="day Tuesday centerText">Tuesday</h2>
-                {{#if tuesday}}
-                {{user_image}}
-                {{/if}}
-            </div>
-        </div>
-        <div class='column'>
-            <div class='green-column'>
-                <h3 class="day Wednesday centerText">Wednesday</h2>
-                {{#if wednesday}}
-                {{user_image}}
-                {{/if}}
-            </div>
-        </div>
-    </div>
-    <div class='row 2'>
-        <div class='column'>
-            <div class='blue-column'>
-                <h3 class="day Thursday centerText">Thursday</h2>
-                {{#if thursday}}
-                {{user_image}}
-                {{/if}}
-            </div>
-        </div>
-        <div class='column'>
-            <div class='green-column'>
-                <h3 class="day Friday centerText">Friday</h2>
-                {{#if friday}}
-                {{user_image}}
-                {{/if}}
-            </div>
-        </div>
-        <div class='column'>
-            <div class='blue-column'>
-                <h3 class="day Saturday centerText">Saturday</h2>
-                {{#if saturday}}
-                {{user_image}}
-                {{/if}}
-            </div>
-        </div>
-    </div>
         <div class='row 2'>
+            <div class='column'>
+                <div class='green-column'>
+                </div>
+            </div>
+            <div class='column'>
+                <div class='green-column'>
+                    <h3 class="day Friday centerText">Friday</h2>
+                    {{#if friday}}
+                    {{user_image}}
+                    {{/if}}
+                </div>
+            </div>
+            <div class='column'>
+                <div class='blue-column'>
+                    <h3 class="day Saturday centerText">Saturday</h2>
+                    {{#if saturday}}
+                    {{user_image}}
+                    {{/if}}
+                </div>
+            </div>
             <div class='column'>
                 <div class='green-column'>
                     <h3 class="day Sunday centerText">Sunday</h2>
@@ -66,14 +83,7 @@
                     {{/if}}
                 </div>
             </div>
-            <div class='column'>
-                <div >
-                </div>
-            </div>
-            <div class='column'>
-                <div >
-                </div>
-            </div>
         </div>
-    </div>
-</div> 
+    </div> 
+</div>
+</div>

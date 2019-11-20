@@ -61,7 +61,45 @@ router.get('/profile/:id', (req, res) => {
 
 
 router.get('/calendar', (req, res) => {
-    res.render('calendar')
+    // get profile data
+    // make all calendar days in profile lowercase
+    // give the render page profiles info 
+
+    db.getAllProfiles()
+    .then(profiles => {
+        return profiles.map(singleProfile => {
+            singleProfile.daysRostered = singleProfile.daysRostered.toLowerCase()
+            return singleProfile
+        })    
+    })
+
+    .then(profileData => {
+            return profileData.map(singleProfile => {
+                let day = singleProfile.daysRostered
+                let img = singleProfile.user_image
+                let newData = {
+                    daysRostered: img
+                }   
+                return newData
+            })
+        })
+        
+
+    // .then(profileData => {
+    //     return profileData.map(singleProfile => {
+    //         let day = singleProfile.daysRostered
+    //         let img = singleProfile.user_image
+    //         let newData = {
+    //             daysRostered: img
+    //         }   
+    //         return newData
+    //     })
+    // })
+        // console.log("PROFILES DATA IS: ", profiles[0].daysRostered.toLowerCase())
+    .then(profileData => {
+        console.log("CALENDARS X IS: ", profileData)
+        res.render('calendar', {profileData})
+    })
 })
 
 
@@ -156,6 +194,15 @@ router.post('/addDayAway/:id', (req, res) => {
 
 
 router.get('/selectDay/:id', (req, res) => {
+    // get users
+    // Pass through in render
+    // in /:id use to add if statement around days in list.
+    
+    // db.getAllRequiregetAllProfilesments()
+    // .then(userData = {
+
+    // })
+
     res.render('addRosteredDay', {user_id: req.params.id})
 })
 
@@ -165,15 +212,18 @@ router.post('/selectDay/:id', (req, res) => {
     // add obj to profile
     // update calendar 
     // redirect to calendar
-    let id = req.body.id //how to pass id over from profile
+    let id = req.params.id
     let day = req.body.days
 
-    // console.log("ID IS: ", id)
+    // console.log('ID IS: ', id) // id is currently undefined :(
+    //     console.log('INFO IS: ', info)
 
-    db.updateDayInProfile(day, id) 
-    then( x => {
+    db.updateDayInProfile(day, id)
+    .then(id => {
+        // console.log("hello", id)
         res.redirect('/calendar')
     })
+})
 
 
     
@@ -189,6 +239,6 @@ router.post('/selectDay/:id', (req, res) => {
     //     // console.log("hello", id)
     //     res.redirect('/profile/' + id)
     // })
-})
+// })
 
 module.exports = router
